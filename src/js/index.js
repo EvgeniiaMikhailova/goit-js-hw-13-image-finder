@@ -16,24 +16,11 @@ function onSearch(e) {
     pixabyApi.query = e.currentTarget.elements.query.value;
     pixabyApi.resetPage();
     pixabyApi.fetchArticles().then(hits => {
-        errorResult();
         clearArticlesContainer();
         appendGalleryMarkup(hits)
     })
         .catch(err => onFetchError(err));
-    // refs.loadMoreBtn.classList.add('is-open');
-}
-
-function errorResult() {
-    console.log(refs.input.target.value);
-    if (refs.input.target.value.length === 0) {
-        error({
-            text: 'Image not found',
-            delay: 1500,
-        });
-    }
-    pixabyApi.fetchArticles().then(appendGalleryMarkup);
-    return;
+    refs.loadMoreBtn.classList.add('is-shown');
 }
 
 function onLoadMore(e) {
