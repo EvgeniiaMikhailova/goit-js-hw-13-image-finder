@@ -1,24 +1,24 @@
 {{#each this}}
 <li class="gallery-item">
 <div class="photo-card">
-    <img class="photo-card__img" src="{{this.webformatURL}}" alt="{{this.tags}}" width="480" />
+    <img class="photo-card__img" src="{{webformatURL}}" alt="{{tags}}" width="480" />
 
     <div class="stats">
         <p class="stats-item">
             <i class="material-icons">thumb_up</i>
-            {{this.likes}}
+            {{likes}}
         </p>
         <p class="stats-item">
             <i class="material-icons">visibility</i>
-            {{this.views}}
+            {{views}}
         </p>
         <p class="stats-item">
             <i class="material-icons">comment</i>
-            {{this.comments}}
+            {{comments}}
         </p>
         <p class="stats-item">
             <i class="material-icons">cloud_download</i>
-            {{this.downloads}}
+            {{downloads}}
         </p>
     </div>
 </div>
