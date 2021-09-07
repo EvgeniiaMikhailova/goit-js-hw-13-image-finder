@@ -1,7 +1,7 @@
 import { refs } from './refs';
 import PixabyApiService from './apiService';
 
-import { alert, defaultModules, success, error } from '../../node_modules/@pnotify/core/dist/PNotify.js';
+import { success, error } from '../../node_modules/@pnotify/core/dist/PNotify.js';
 import '@pnotify/core/dist/BrightTheme.css';
 import galleryCards from '../templates/image.hbs';
 
@@ -9,6 +9,7 @@ const pixabyApi = new PixabyApiService();
 
 refs.searchForm.addEventListener('submit', onSearch);
 refs.loadMoreBtn.addEventListener('click', onLoadMore);
+refs.upLink.addEventListener('click', onLinkUpClick);
 
 function onSearch(e) {
     e.preventDefault();
@@ -49,4 +50,9 @@ function onFetchError(err) {
       error({ text: `Error! This country not find.` });
       return;
     } 
-  }
+}
+
+function onLinkUpClick(e) {
+    e.preventDefault();
+    refs.input.scrollIntoView({ block: "center", behavior: "smooth" });
+}
